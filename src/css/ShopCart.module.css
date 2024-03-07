@@ -1,0 +1,55 @@
+.shopCartPage {
+	display: flex;
+	justify-content: space-between;
+	gap: 20px;
+}
+.inputBlock {
+	border: 1px solid #000;
+	border-radius: 5px;
+	flex-grow: 1;
+	max-width: 50%;
+	padding: 20px 20px 100px 20px;
+}
+.inputItem {
+	max-width: 500px;
+}
+.inputItem:not(:last-child) {
+	margin-bottom: 40px;
+}
+.inputItem label {
+	display: block;
+	margin-bottom: 10px;
+	font-size: 20px;
+}
+.inputItem input {
+	border: 1px solid #000;
+	border-radius: 5px;
+	width: 100%;
+	height: 40px;
+	font-size: 20px;
+}
+.shopCart {
+	flex-grow: 1;
+
+	max-width: 50%;
+	border: 1px solid #000;
+	border-radius: 5px;
+	padding: 20px;
+	overflow-y: auto;
+	height: 80vh;
+}
+.footerForm {
+	display: flex;
+	justify-content: end;
+	gap: 40px;
+	height: 40px;
+	margin-top: 20px;
+}
+.footerForm button {
+	border: 1px solid #000;
+	border-radius: 5px;
+	padding: 0px 40px;
+}
+.totalPrice {
+	align-self: center;
+}

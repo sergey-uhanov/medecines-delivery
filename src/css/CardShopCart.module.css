@@ -1,0 +1,55 @@
+.shopCart {
+	margin-bottom: 20px;
+}
+
+.cardWrapper {
+	border: 1px solid #000;
+	border-radius: 5px;
+	padding: 10px;
+	display: flex;
+	gap: 30px;
+	margin-bottom: 20px;
+}
+.imgwrapper {
+	border: 1px solid #000;
+	border-radius: 5px;
+}
+.imgwrapper img {
+	width: 200px;
+	height: 100px;
+
+	object-fit: cover;
+}
+.details {
+	display: flex;
+	flex-direction: column;
+	flex-grow: 1;
+
+	gap: 20px;
+}
+.title {
+	font-weight: 700;
+	font-size: 20px;
+}
+.price {
+	text-align: center;
+}
+.details input {
+	text-align: center;
+	border: 1px solid #000;
+	border-radius: 5px;
+	height: 30px;
+	width: 50px;
+}
+.inputWrapper {
+}
+.inputWrapper button {
+	font-size: 25px;
+	margin: 0 5px;
+	position: relative;
+	bottom: 3px;
+}
+.counter {
+	display: flex;
+	justify-content: center;
+}
