@@ -1,0 +1,4 @@
+{
+	"appService.defaultWebAppToDeploy": "undefined/subscriptions/26ac41b0-893c-4908-930b-916805bda87d/resourceGroups/appsvc_linux_centralus/providers/Microsoft.Web/sites/medecines-delivery",
+	"appService.deploySubpath": "."
+}

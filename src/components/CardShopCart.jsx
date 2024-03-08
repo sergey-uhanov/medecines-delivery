@@ -1,22 +1,20 @@
 import { useEffect, useState } from 'react'
 import style from '../css/CardShopCart.module.css'
 
-function CardShopCart({ setTotalPrice, product }) {
+function CardShopCart({ setTotalPrice, product, index, onProductDataChange }) {
 	const productPrice = parseFloat(product.price)
 	const [price, setPrice] = useState(productPrice)
 	const [pieceCount, setPieceCount] = useState(1)
 
-	useEffect(() => {
-		setPrice(productPrice * pieceCount)
-	}, [pieceCount])
-
-	function getRandomNumber(min, max) {
-		return Math.floor(Math.random() * (max - min + 1)) + min
-	}
 	function handleIncrement() {
 		setPieceCount(prev => prev + 1)
 		setTotalPrice(prev => prev + productPrice)
 	}
+
+	useEffect(() => {
+		setPrice(productPrice * pieceCount)
+		onProductDataChange(index, { pieceCount, product })
+	}, [pieceCount])
 
 	function handleDecrement() {
 		if (pieceCount > 1) {
@@ -24,11 +22,16 @@ function CardShopCart({ setTotalPrice, product }) {
 			setTotalPrice(prev => prev - productPrice)
 		}
 	}
-	const imgProduct = require(`../img/${getRandomNumber(1, 16)}.jpg`)
+
+	function imgProduct(index) {
+		return require(`../img/${index}.jpg`)
+	}
+
+	const productImg = imgProduct(index)
 	return (
 		<div className={style.cardWrapper}>
 			<div className={style.imgwrapper}>
-				<img src={imgProduct} alt='drugs' />
+				<img src={productImg} alt='drugs' />
 			</div>
 			<div className={style.details}>
 				<h4 className={style.title}>{product.name}</h4>

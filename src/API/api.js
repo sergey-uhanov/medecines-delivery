@@ -1,1 +1,1 @@
-export const api = 'http://localhost:8080/api'
+export const api = 'https://nodeapimedicinesdelivery.azurewebsites.net/api'

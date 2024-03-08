@@ -4,10 +4,8 @@ function ProductCardList({ productsArray }) {
 	return (
 		<div className={style.productCardList}>
 			{productsArray &&
-				productsArray.map(item => (
-					<div className=''>
-						<ProductCard productObj={item} />
-					</div>
+				productsArray.map((item, index) => (
+					<ProductCard key={index} productObj={item} index={index} />
 				))}
 		</div>
 	)

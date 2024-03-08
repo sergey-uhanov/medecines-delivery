@@ -5,7 +5,7 @@ function ProductCard({ productObj }) {
 	const addProduct = shopCartStore(state => state.addProduct)
 
 	function getRandomNumber(min, max) {
-		return Math.floor(Math.random() * (max - min + 1)) + min
+		return parseInt(productObj.price)
 	}
 	const imgProduct = require(`../img/${getRandomNumber(1, 16)}.jpg`)
 	return (

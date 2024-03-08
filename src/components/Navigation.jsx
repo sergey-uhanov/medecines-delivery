@@ -5,7 +5,7 @@ function Navigation() {
 	const addProduct = shopCartStore(state => state.products)
 	return (
 		<div className={style.nav}>
-			<Link className={style.link} to='/Shop'>
+			<Link className={style.link} to='/'>
 				Shop
 			</Link>
 			<Link className={style.link} to='/ShopingCart'>
