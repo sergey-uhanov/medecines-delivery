@@ -1,0 +1,34 @@
+{
+  "files": {
+    "main.css": "/medecines-delivery/static/css/main.66e35b1b.css",
+    "main.js": "/medecines-delivery/static/js/main.a6de32a4.js",
+    "static/media/10.jpg": "/medecines-delivery/static/media/10.6012997f5409dc0b1616.jpg",
+    "static/media/7.jpg": "/medecines-delivery/static/media/7.6012997f5409dc0b1616.jpg",
+    "static/media/1.jpg": "/medecines-delivery/static/media/1.4c62ffe04b78424d658b.jpg",
+    "static/media/16.jpg": "/medecines-delivery/static/media/16.4c62ffe04b78424d658b.jpg",
+    "static/media/15.jpg": "/medecines-delivery/static/media/15.4d068c549279ea15cbca.jpg",
+    "static/media/18.jpg": "/medecines-delivery/static/media/18.12b720e4b49105d98de7.jpg",
+    "static/media/3.jpg": "/medecines-delivery/static/media/3.12b720e4b49105d98de7.jpg",
+    "static/media/19.jpg": "/medecines-delivery/static/media/19.e413f234285498c45d43.jpg",
+    "static/media/4.jpg": "/medecines-delivery/static/media/4.e413f234285498c45d43.jpg",
+    "static/media/0.jpg": "/medecines-delivery/static/media/0.28bebb578342e8c69aae.jpg",
+    "static/media/11.jpg": "/medecines-delivery/static/media/11.28bebb578342e8c69aae.jpg",
+    "static/media/8.jpg": "/medecines-delivery/static/media/8.4f52f8828848c6266718.jpg",
+    "static/media/14.jpg": "/medecines-delivery/static/media/14.c9aaea4d566d2d27ff6d.jpg",
+    "static/media/12.jpg": "/medecines-delivery/static/media/12.e8ced9d4fc3b50e61ef0.jpg",
+    "static/media/6.jpg": "/medecines-delivery/static/media/6.8dd962c11dbbc1fdc251.jpg",
+    "static/media/13.jpg": "/medecines-delivery/static/media/13.86b1386fabde17be7767.jpg",
+    "static/media/17.jpg": "/medecines-delivery/static/media/17.76ed8c9a5b66e04ba02d.jpg",
+    "static/media/2.jpg": "/medecines-delivery/static/media/2.76ed8c9a5b66e04ba02d.jpg",
+    "static/media/20.jpg": "/medecines-delivery/static/media/20.c5c086173725d3e90598.jpg",
+    "static/media/5.jpg": "/medecines-delivery/static/media/5.c5c086173725d3e90598.jpg",
+    "static/media/9.jpg": "/medecines-delivery/static/media/9.c5c086173725d3e90598.jpg",
+    "index.html": "/medecines-delivery/index.html",
+    "main.66e35b1b.css.map": "/medecines-delivery/static/css/main.66e35b1b.css.map",
+    "main.a6de32a4.js.map": "/medecines-delivery/static/js/main.a6de32a4.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.66e35b1b.css",
+    "static/js/main.a6de32a4.js"
+  ]
+}
