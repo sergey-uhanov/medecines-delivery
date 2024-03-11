@@ -5,6 +5,9 @@ body {
 		sans-serif;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+	max-width: 1200px;
+	margin: 0 auto;
+	background: rgba(133, 133, 133, 0.305);
 }
 
 code {
@@ -12,10 +15,8 @@ code {
 		monospace;
 }
 body {
-	max-width: 1200px;
-	margin: 0 auto;
 }
 h1 {
-	color: brown;
+	color: rgb(1, 91, 7);
 	font-size: 40px;
 }

@@ -3,10 +3,10 @@
 	display: flex;
 	gap: 20px;
 	flex-wrap: wrap;
-	justify-content: space-between;
+
 	border: 1px solid #000;
 	border-radius: 5px;
-	padding: 20px 100px;
-	height: 95vh;
+	padding: 20px 10px;
+	height: 90vh;
 	overflow-y: auto;
 }

@@ -9,6 +9,10 @@
 	display: flex;
 	gap: 30px;
 	margin-bottom: 20px;
+	background-color: #fff;
+
+	box-shadow: 12px 17px 51px rgba(0, 0, 0, 0.22);
+	backdrop-filter: blur(6px);
 }
 .imgwrapper {
 	border: 1px solid #000;

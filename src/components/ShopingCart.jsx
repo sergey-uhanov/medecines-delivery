@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useHistory } from 'react-router-dom'
 import fetchNewCustomer from '../API/newCustomersApi.js'
 import fetchNewproducts from '../API/newOrderProduct.js'
 import style from '../css/ShopCart.module.css'
@@ -17,7 +17,7 @@ function ShopingCart() {
 		email: '',
 		phone: '',
 		adress: '',
-		order_amount: 2,
+		order_amount: 0,
 	})
 	const [productData, setProductData] = useState([])
 	function handleProductDataChange(index, data) {
@@ -34,15 +34,16 @@ function ShopingCart() {
 			[event.target.id]: event.target.value,
 		})
 	}
-	const navigate = useNavigate()
+	const history = useHistory()
 
 	const handleRedirect = () => {
-		navigate('/AcceptedOrder')
+		history.push('/AcceptedOrder')
 	}
+
 	function fetch() {
 		for (let field in formData) {
 			if (formData[field] === '') {
-				alert('Пожалуйста, заполните все поля.')
+				alert('Please fill in all fields.')
 				return
 			}
 		}

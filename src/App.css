@@ -1,17 +1,11 @@
 @import './css/reset.css';
-body {
-	background: rgba(155, 179, 250, 0.567);
-}
+
 .item-red {
 	color: brown;
-
-	background-color: rgb(224, 221, 221);
-	padding: 10px;
 	transition: all 0.3s;
 }
 .item-black {
 	color: black;
-	padding: 10px;
 }
 .main {
 	display: flex;
