@@ -10,6 +10,8 @@ const shopCartStore = create(set => ({
 			}
 			return state
 		}),
-	clearStore: product => set(state => ({ products: [] })),
+	deleteItem: index =>
+		set(state => ({ products: state.products.filter((_, i) => i !== index) })),
+	clearStore: () => set({ products: [] }),
 }))
 export default shopCartStore

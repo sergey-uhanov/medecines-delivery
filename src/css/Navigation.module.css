@@ -8,5 +8,8 @@
 	margin-right: 20px;
 }
 .link:hover {
-	color: rgb(152, 151, 151);
+	color: rgb(113, 132, 243);
+}
+.active {
+	color: rgb(42, 93, 165);
 }

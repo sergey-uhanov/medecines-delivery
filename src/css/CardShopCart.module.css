@@ -10,7 +10,7 @@
 	gap: 30px;
 	margin-bottom: 20px;
 	background-color: #fff;
-
+	position: relative;
 	box-shadow: 12px 17px 51px rgba(0, 0, 0, 0.22);
 	backdrop-filter: blur(6px);
 }
@@ -56,4 +56,34 @@
 .counter {
 	display: flex;
 	justify-content: center;
+}
+.ggClose {
+	position: absolute;
+	top: 5px;
+	right: 5px;
+	box-sizing: border-box;
+	cursor: pointer;
+	display: block;
+	transform: scale(var(--ggs, 1));
+	width: 22px;
+	height: 22px;
+	border: 2px solid transparent;
+	border-radius: 40px;
+}
+.ggClose::after,
+.ggClose::before {
+	content: '';
+	display: block;
+	box-sizing: border-box;
+	position: absolute;
+	width: 16px;
+	height: 2px;
+	background: currentColor;
+	transform: rotate(45deg);
+	border-radius: 5px;
+	top: 8px;
+	left: 1px;
+}
+.ggClose::after {
+	transform: rotate(-45deg);
 }

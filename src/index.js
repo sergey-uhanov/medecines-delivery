@@ -3,11 +3,13 @@ import ReactDOM from 'react-dom'
 import { HashRouter, Route, HashRouter as Router } from 'react-router-dom'
 import App from './App'
 import AcceptedOrderPage from './components/AcceptedOrderPage'
+import Navigation from './components/Navigation'
 import ShopingCart from './components/ShopingCart'
 import './index.css'
 
 ReactDOM.render(
 	<HashRouter>
+		<Navigation />
 		<Router basename={process.env.PUBLIC_URL}>
 			<Route exact path='/' component={App} />
 			<Route path='/shopingCart' component={ShopingCart} />

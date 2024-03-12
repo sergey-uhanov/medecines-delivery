@@ -1,7 +1,13 @@
 import { useEffect, useState } from 'react'
 import style from '../css/CardShopCart.module.css'
 
-function CardShopCart({ setTotalPrice, product, index, onProductDataChange }) {
+function CardShopCart({
+	setTotalPrice,
+	product,
+	index,
+	onProductDataChange,
+	onDelete,
+}) {
 	const productPrice = parseFloat(product.price)
 	const [price, setPrice] = useState(productPrice)
 	const [pieceCount, setPieceCount] = useState(1)
@@ -30,6 +36,7 @@ function CardShopCart({ setTotalPrice, product, index, onProductDataChange }) {
 	const productImg = imgProduct(index)
 	return (
 		<div className={style.cardWrapper}>
+			<i onClick={() => onDelete(index)} className={style.ggClose}></i>
 			<div className={style.imgwrapper}>
 				<img src={productImg} alt='drugs' />
 			</div>

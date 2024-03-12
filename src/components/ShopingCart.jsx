@@ -5,9 +5,9 @@ import fetchNewproducts from '../API/newOrderProduct.js'
 import style from '../css/ShopCart.module.css'
 import shopCartStore from '../store/shopeCartStore.js'
 import CardShopCart from './CardShopCart.jsx'
-import Navigation from './Navigation'
 function ShopingCart() {
 	const product = shopCartStore(state => state.products)
+	const deleteItemStore = shopCartStore(state => state.deleteItem)
 	const clearStore = shopCartStore(state => state.clearStore)
 	const [totalPrice, setTotalPrice] = useState(
 		product.reduce((acc, cur) => acc + parseFloat(cur.price), 0)
@@ -20,6 +20,9 @@ function ShopingCart() {
 		order_amount: 5,
 	})
 	const [productData, setProductData] = useState([])
+	useEffect(() => {
+		setTotalPrice(product.reduce((acc, cur) => acc + parseFloat(cur.price), 0))
+	}, [product])
 	function handleProductDataChange(index, data) {
 		setProductData(prev => {
 			const newData = [...prev]
@@ -63,7 +66,6 @@ function ShopingCart() {
 	}
 	return (
 		<>
-			<Navigation />
 			<form action='#'>
 				<div className={style.shopCartPage}>
 					<ul className={style.inputBlock}>
@@ -117,6 +119,7 @@ function ShopingCart() {
 									product={item}
 									index={index}
 									onProductDataChange={handleProductDataChange}
+									onDelete={deleteItemStore}
 								/>
 							))}
 					</div>
