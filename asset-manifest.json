@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/medecines-delivery/static/css/main.488367de.css",
-    "main.js": "/medecines-delivery/static/js/main.b7799159.js",
+    "main.css": "/medecines-delivery/static/css/main.ab379ba1.css",
+    "main.js": "/medecines-delivery/static/js/main.b7ef1b5a.js",
     "static/media/10.jpg": "/medecines-delivery/static/media/10.6012997f5409dc0b1616.jpg",
     "static/media/7.jpg": "/medecines-delivery/static/media/7.6012997f5409dc0b1616.jpg",
     "static/media/1.jpg": "/medecines-delivery/static/media/1.4c62ffe04b78424d658b.jpg",
@@ -24,11 +24,11 @@
     "static/media/5.jpg": "/medecines-delivery/static/media/5.c5c086173725d3e90598.jpg",
     "static/media/9.jpg": "/medecines-delivery/static/media/9.c5c086173725d3e90598.jpg",
     "index.html": "/medecines-delivery/index.html",
-    "main.488367de.css.map": "/medecines-delivery/static/css/main.488367de.css.map",
-    "main.b7799159.js.map": "/medecines-delivery/static/js/main.b7799159.js.map"
+    "main.ab379ba1.css.map": "/medecines-delivery/static/css/main.ab379ba1.css.map",
+    "main.b7ef1b5a.js.map": "/medecines-delivery/static/js/main.b7ef1b5a.js.map"
   },
   "entrypoints": [
-    "static/css/main.488367de.css",
-    "static/js/main.b7799159.js"
+    "static/css/main.ab379ba1.css",
+    "static/js/main.b7ef1b5a.js"
   ]
 }
