@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useHistory } from 'react-router-dom'
 import fetchNewCustomer from '../API/newCustomersApi.js'
 import fetchNewproducts from '../API/newOrderProduct.js'
@@ -17,7 +17,7 @@ function ShopingCart() {
 		email: '',
 		phone: '',
 		adress: '',
-		order_amount: 0,
+		order_amount: 5,
 	})
 	const [productData, setProductData] = useState([])
 	function handleProductDataChange(index, data) {
@@ -39,7 +39,12 @@ function ShopingCart() {
 	const handleRedirect = () => {
 		history.push('/AcceptedOrder')
 	}
-
+	useEffect(() => {
+		setFormData({
+			...formData,
+			order_amount: totalPrice.toFixed(2),
+		})
+	}, [totalPrice])
 	function fetch() {
 		for (let field in formData) {
 			if (formData[field] === '') {
@@ -47,11 +52,7 @@ function ShopingCart() {
 				return
 			}
 		}
-		setFormData({
-			...formData,
-			order_amount: totalPrice.toFixed(2),
-		})
-
+		console.log(formData)
 		fetchNewCustomer(formData).then(data => {
 			const id = data.id
 			fetchNewproducts({ id, productData })
