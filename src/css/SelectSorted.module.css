@@ -1,0 +1,17 @@
+.wrapper {
+	color: rgb(0, 0, 139);
+	font-size: 20px;
+	margin-top: 10px;
+}
+.label {
+	padding: 5px;
+}
+.select {
+	font-size: 19px;
+	background-color: #d9e7ff;
+	border-radius: 5px;
+	color: rgb(0, 0, 139);
+}
+.item {
+	margin-bottom: 200px;
+}

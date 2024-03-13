@@ -1,5 +1,5 @@
 .cardWrapper {
-	border: 1px solid #000;
+	border: 1px solid #1a6dbb;
 	border-radius: 5px;
 	padding: 10px;
 	display: flex;
@@ -40,10 +40,11 @@
 .addBtn {
 	position: relative;
 	font-size: 20px;
-	border: 1px solid #bdbdbd;
+	background: #bbd8f5;
+	border: 1px solid #1a6dbb;
 	border-radius: 5px;
 	padding: 5px 10px;
-	background-color: #fff;
+
 	transition: all 0.3s ease 0s;
 	cursor: pointer;
 	outline: none;

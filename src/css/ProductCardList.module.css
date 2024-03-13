@@ -4,9 +4,11 @@
 	gap: 20px;
 	flex-wrap: wrap;
 
-	border: 1px solid #000;
 	border-radius: 5px;
 	padding: 20px 10px;
 	height: 90vh;
 	overflow-y: auto;
+}
+.productCard {
+	border: 1px solid #1a6dbb;
 }

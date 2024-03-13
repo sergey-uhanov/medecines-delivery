@@ -8,6 +8,7 @@ import style from '../css/Main.module.css'
 function Main() {
 	const [pharmacyArray, setPharmacyArray] = useState([])
 	const [productsArray, setProductsArray] = useState()
+	const [trigerChenge, setTrigerChenge] = useState(true)
 	const [isloading, setIsloading] = useState(true)
 
 	useEffect(() => {
@@ -26,6 +27,7 @@ function Main() {
 	async function handleShowProducts(id) {
 		const data = await fetchProducts(id)
 		setProductsArray(data)
+		setTrigerChenge(!trigerChenge)
 	}
 	return (
 		<>
@@ -37,7 +39,11 @@ function Main() {
 						handleShowProducts={handleShowProducts}
 						pharmacyArray={pharmacyArray}
 					/>
-					<ProductCardList productsArray={productsArray} />
+					<ProductCardList
+						productsArray={productsArray}
+						setProductsArray={setProductsArray}
+						trigerChenge={trigerChenge}
+					/>
 				</section>
 			)}
 		</>
