@@ -1,7 +1,12 @@
 import { useEffect, useState } from 'react'
 import style from '../css/ProductCard.module.css'
 import shopCartStore from '../store/shopeCartStore.js'
-function ProductCard({ productObj }) {
+function ProductCard({
+	productObj,
+	isFavorite,
+	handleAddFavorite,
+	updateFavoriteState,
+}) {
 	const shopCartArr = shopCartStore(state => state.products)
 	const [isActiveBtn, setIsActiveBtn] = useState(false)
 	useEffect(() => {
@@ -13,6 +18,25 @@ function ProductCard({ productObj }) {
 	function clickBtn() {
 		addProduct(productObj)
 		setIsActiveBtn(true)
+	}
+
+	function handleAddFavorite(id) {
+		let temp = JSON.parse(localStorage.getItem('Favoritelist'))
+		if (temp !== null) {
+			const index = temp.findIndex(el => el === id)
+			if (index !== -1) {
+				temp.splice(index, 1)
+			} else {
+				temp.push(id)
+			}
+		} else {
+			temp = [id]
+		}
+
+		localStorage.setItem('Favoritelist', JSON.stringify(temp))
+
+		const updatedIsFavorite = temp.includes(id)
+		updateFavoriteState(id, updatedIsFavorite)
 	}
 
 	function getRandomNumber(min, max) {
@@ -35,6 +59,12 @@ function ProductCard({ productObj }) {
 						add to cart
 					</button>
 				</div>
+			</div>
+			<div
+				onClick={() => handleAddFavorite(productObj.id)}
+				className={style.ggHeart}
+			>
+				{isFavorite ? '💛' : '🖤'}
 			</div>
 		</div>
 	)

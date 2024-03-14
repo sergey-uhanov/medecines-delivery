@@ -6,44 +6,76 @@ import sortFirstLow from '../helpers/sortFirstLow'
 import SelectSorted from './SelectSorted'
 
 function ProductCardList({ productsArray, setProductsArray, trigerChenge }) {
+	const localStorFavoritelist = localStorage.getItem('Favoritelist')
+	let templist
+
+	if (localStorFavoritelist !== null) {
+		templist = JSON.parse(localStorFavoritelist)
+	} else {
+		templist = []
+	}
 	const [sortedType, setSortedType] = useState('added_dateNew')
+	const [favariteIdList, setFavoriteIdList] = useState(templist)
 
-	useEffect(() => {
+	function isFavoriteItem(id) {
+		return favariteIdList.some(element => element === id)
+	}
+
+	function updateFavoriteState(id, isFavorite) {
+		const newFavoriteIdList = isFavorite
+			? [...favariteIdList, id]
+			: favariteIdList.filter(favId => favId !== id)
+		setFavoriteIdList(newFavoriteIdList)
+	}
+	function selectingDesiredSorting(array) {
+		let temp
 		switch (sortedType) {
 			case 'added_dateNew':
-				setProductsArray(sortFirstLow(productsArray, 'added_date'))
+				temp = sortFirstLow(array, 'added_date')
+
 				break
 			case 'priceLow':
-				setProductsArray(sortFirstLow(productsArray, 'price'))
+				temp = sortFirstLow(array, 'price')
 				break
 			case 'added_dateOld':
-				setProductsArray(sortFirstHigh(productsArray, 'added_date'))
+				temp = sortFirstHigh(array, 'added_date')
 				break
 			case 'priceHigh':
-				setProductsArray(sortFirstHigh(productsArray, 'price'))
+				temp = sortFirstHigh(array, 'price')
 				break
-
 			default:
-				break
+				throw new Error('incorrect sorting type')
 		}
+
+		return temp
+	}
+	function sortingFavoritAndOtherProducts(commonArr, favoriteIdList) {
+		if (commonArr && commonArr.length !== 0) {
+			if (favariteIdList.length !== 0) {
+				const favoriteProducts = commonArr.filter(item =>
+					favoriteIdList.includes(item.id)
+				)
+				const otherProducts = commonArr.filter(
+					item => !favoriteProducts.some(favItem => favItem.id === item.id)
+				)
+				const sortedFavoriteProducts = selectingDesiredSorting(favoriteProducts)
+				const sortedOtherProducts = selectingDesiredSorting(otherProducts)
+				let productsArray = [...sortedFavoriteProducts, ...sortedOtherProducts]
+				setProductsArray(productsArray)
+			} else {
+				let productsList = selectingDesiredSorting(productsArray)
+
+				setProductsArray(productsList)
+			}
+		}
+	}
+
+	useEffect(() => {
+		sortingFavoritAndOtherProducts(productsArray, favariteIdList)
 	}, [sortedType])
+
 	useEffect(() => {
-		switch (sortedType) {
-			case 'added_dateNew':
-				setProductsArray(sortFirstLow(productsArray, 'added_date'))
-				break
-			case 'priceLow':
-				setProductsArray(sortFirstLow(productsArray, 'price'))
-				break
-			case 'added_dateOld':
-				setProductsArray(sortFirstHigh(productsArray, 'added_date'))
-				break
-			case 'priceHigh':
-				setProductsArray(sortFirstHigh(productsArray, 'price'))
-				break
-			default:
-				break
-		}
+		sortingFavoritAndOtherProducts(productsArray, favariteIdList)
 	}, [trigerChenge])
 
 	return (
@@ -52,7 +84,13 @@ function ProductCardList({ productsArray, setProductsArray, trigerChenge }) {
 			<div className={style.productCardList}>
 				{productsArray &&
 					productsArray.map((item, index) => (
-						<ProductCard key={index} productObj={item} index={index} />
+						<ProductCard
+							key={index}
+							productObj={item}
+							index={index}
+							isFavorite={isFavoriteItem(item.id)}
+							updateFavoriteState={updateFavoriteState}
+						/>
 					))}
 			</div>
 		</div>

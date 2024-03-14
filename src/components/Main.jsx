@@ -21,7 +21,7 @@ function Main() {
 		fetchData()
 		setTimeout(() => {
 			setIsloading(false)
-		}, 2000)
+		}, 1000)
 	}, [])
 
 	async function handleShowProducts(id) {
