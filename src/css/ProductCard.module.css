@@ -120,3 +120,9 @@
 		opacity: 0;
 	}
 }
+.ggHeart {
+	position: absolute;
+	top: 5px;
+	right: 5px;
+	cursor: pointer;
+}

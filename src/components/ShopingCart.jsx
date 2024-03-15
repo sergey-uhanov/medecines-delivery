@@ -17,7 +17,7 @@ function ShopingCart() {
 		email: '',
 		phone: '',
 		adress: '',
-		order_amount: 5,
+		order_amount: 0,
 	})
 	const [productData, setProductData] = useState([])
 	useEffect(() => {
@@ -61,8 +61,18 @@ function ShopingCart() {
 			fetchNewproducts({ id, productData })
 		})
 		clearStore()
-
+		localStorage.setItem('shopCartList', JSON.stringify([]))
 		handleRedirect()
+	}
+	function handledeleteItemStore(id) {
+		deleteItemStore(id)
+		let localStorageShopCartString = localStorage.getItem('shopCartList')
+
+		if (localStorageShopCartString !== null) {
+			const localStorageShopCart = JSON.parse(localStorageShopCartString)
+			const updateShopCart = localStorageShopCart.filter(item => item.id !== id)
+			localStorage.setItem('shopCartList', JSON.stringify(updateShopCart))
+		}
 	}
 	return (
 		<>
@@ -119,7 +129,7 @@ function ShopingCart() {
 									product={item}
 									index={index}
 									onProductDataChange={handleProductDataChange}
-									onDelete={deleteItemStore}
+									onDelete={handledeleteItemStore}
 								/>
 							))}
 					</div>

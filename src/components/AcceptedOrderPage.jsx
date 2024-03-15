@@ -1,9 +1,6 @@
-import Navigation from './Navigation'
-
 function AcceptedOrderPage() {
 	return (
 		<>
-			<Navigation />
 			<h1>
 				The order has been successfully placed. We will contact you shortly for
 				more details

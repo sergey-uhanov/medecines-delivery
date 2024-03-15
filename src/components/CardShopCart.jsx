@@ -36,7 +36,7 @@ function CardShopCart({
 	const productImg = imgProduct(index)
 	return (
 		<div className={style.cardWrapper}>
-			<i onClick={() => onDelete(index)} className={style.ggClose}></i>
+			<i onClick={() => onDelete(product.id)} className={style.ggClose}></i>
 			<div className={style.imgwrapper}>
 				<img src={productImg} alt='drugs' />
 			</div>

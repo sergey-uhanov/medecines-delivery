@@ -1,7 +1,12 @@
 import { create } from 'zustand'
-
+let temp = localStorage.getItem('shopCartList')
+if (temp !== null) {
+	temp = JSON.parse(temp)
+} else {
+	temp = []
+}
 const shopCartStore = create(set => ({
-	products: [],
+	products: temp,
 	addProduct: product =>
 		set(state => {
 			// Проверка на наличие продукта в корзине
@@ -10,8 +15,8 @@ const shopCartStore = create(set => ({
 			}
 			return state
 		}),
-	deleteItem: index =>
-		set(state => ({ products: state.products.filter((_, i) => i !== index) })),
+	deleteItem: id =>
+		set(state => ({ products: state.products.filter(item => item.id !== id) })),
 	clearStore: () => set({ products: [] }),
 }))
 export default shopCartStore

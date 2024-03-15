@@ -18,6 +18,15 @@ function ProductCard({
 	function clickBtn() {
 		addProduct(productObj)
 		setIsActiveBtn(true)
+		let localStorageShopCartString = localStorage.getItem('shopCartList')
+
+		if (localStorageShopCartString !== null) {
+			const localStorageShopCart = JSON.parse(localStorageShopCartString)
+			const updateShopCart = [...localStorageShopCart, productObj]
+			localStorage.setItem('shopCartList', JSON.stringify(updateShopCart))
+		} else {
+			localStorage.setItem('shopCartList', JSON.stringify([productObj]))
+		}
 	}
 
 	function handleAddFavorite(id) {
